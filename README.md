@@ -6,6 +6,7 @@ It will also be our sandbox to play with and follow for all this software engine
 Make yourself confortable to watch those steps and have a look on the history of this repository to see our evolution.
 
 
+
 # Study List
 - [X] Variables and visibility
 - [X] Singleton
