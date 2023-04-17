@@ -1,14 +1,18 @@
 public class Timer {
+    long startTime;
+    long duration;
     public Timer(){
         
     }
-    long startTime = System.currentTimeMillis();
+    public void start(){
+    startTime = System.currentTimeMillis();
+    }
 
 // Chame aqui a função que você deseja medir o tempo de execução
-
+    public void stop(){
     long endTime = System.currentTimeMillis();
-    long duration = endTime - startTime;
-    
+    duration = endTime - startTime;
+    }
 
     public String toString(){
        return "timer: " + duration;
