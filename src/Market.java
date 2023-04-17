@@ -9,8 +9,10 @@ public class Market {
 		productList.addProduct(product);
 		productList.addProduct(product2);
 		productList.addProduct(product3);
-		//productList.addProduct(product4);
+		productList.addProduct(product4);
 
 		System.out.println(productList.toString());
+		System.out.println(Product.getCountInstances());
+		System.out.println(Product.countInstances);
 	}   
 }
