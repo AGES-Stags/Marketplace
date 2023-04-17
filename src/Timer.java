@@ -1,8 +1,7 @@
 public class Timer {
     long startTime;
     long duration;
-    public Timer(){
-         
+    public Timer(){  
     }
     
     public void start(){
