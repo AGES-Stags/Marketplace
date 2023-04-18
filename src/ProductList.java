@@ -43,6 +43,20 @@ public class ProductList {
 		size++;
 	}
 
+	public void addProductInIndex(Product product, int index){
+		Node guarda;
+		Node aux = new Node(product);
+
+		guarda = head;
+			for(int i=0; i<size; i++){
+				guarda = guarda.next;
+				aux = aux.next;
+				
+				size++;
+				}
+			}
+
+
 	public Product getIndex(int index) {
 		Node node = head;
 

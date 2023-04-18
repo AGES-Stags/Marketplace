@@ -5,11 +5,14 @@ public class Market {
 		Product product2 = new Product("Sofá", 670, "3 Lugares");
 		Product product3 = new Product("Mesa", 780, "6 Lugares");
 		Product product4 = new Product("Tábua", 7, "Madeira");
+		Product product5 = new Product("Roupeiro", 760, "MDF");
 		ProductList productList = ProductList.getInstance();
 		
 		productList.add(product);
 		productList.add(product2);
 		productList.add(product3);
 		productList.add(product4);
+	
+		productList.addProductInIndex(product5, 3);
 	}   
 }
