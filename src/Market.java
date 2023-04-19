@@ -13,6 +13,8 @@ public class Market {
 		productList.add(product3);
 		productList.add(product4);
 	
-		productList.addProductInIndex(product5, 3);
+		//productList.addProductInIndex(product5, 3);
+		productList.addFirst(product5);
+		productList.toString();
 	}   
 }
