@@ -56,11 +56,53 @@ public class ProductList {
 
 	public Product getIndexReverse(int index) {
 		Node node = head;
-			// TODO
+			while(node.next!=null){
+				if(getIndex(index).equals(node.product));
+			}
 		return node.product;
 	}
 
+	public void addFirst(Product product) { 
+		Node node = new Node(product);
+		if(head == null) {
+            head = tail = node;
+			size++;
+			return;
+		}
+		node.next = head;
+		head.previous = node;
+		head = node; 
+		size++; 
+	}
 
+	public void addLast(Product product) { 
+		Node node = new Node(product);
+		if(head == null) {
+            head = tail = node;
+			size++;
+			return;
+		}
+		node.previous = tail;
+		tail.next = node;
+		tail = node; 
+		size++; 
+	}
+	public void addFirstAndLast(Node node1, Node node2) {
+		addFirst(node1.product);
+		addLast(node2.product);
+	}
+	
+	public boolean contains(Product product) {
+		Node node = head;
+		while (node != null) {
+			if (node.product.equals(product)) {
+				return true;
+			}
+			node = node.next;
+		}
+		return false;
+	}
+	
 	@Override
 	public String toString(){
 		return "";
