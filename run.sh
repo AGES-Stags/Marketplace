@@ -10,8 +10,8 @@ fi
 
 # Create java run classpath execution parameter
 if [ -d "$currentDirectory/lib/" ]; then
-	libs="-cp $currentDirectory/lib/DevTools.jar"
-	classpath="-cp .:$currentDirectory/lib/DevTools.jar:$currentDirectory/bin"
+	libs="-cp $currentDirectory/lib/*.jar"
+	classpath="-cp .:$currentDirectory/lib/*.jar:$currentDirectory/bin"
 else
 	classpath="-cp $currentDirectory/bin"
 fi;
