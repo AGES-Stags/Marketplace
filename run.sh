@@ -9,9 +9,18 @@ elif [ ! -z "$1" ]; then
 fi
 
 # Create java run classpath execution parameter
-if [ -d "$currentDirectory/lib/" ]; then
-	libs="-cp $currentDirectory/lib/DevTools.jar"
-	classpath="-cp .:$currentDirectory/lib/DevTools.jar:$currentDirectory/bin"
+if [ -d "$currentDirectory/libs/" ]; then
+	libraries="$(ls $currentDirectory/libs)"
+	classpath="-cp ."
+	libs="-cp "
+	
+	for library in $libraries
+	do
+		libs="$libs $currentDirectory/libs/$library"
+		classpath="$classpath:$currentDirectory/libs/$library"
+	done
+
+	classpath="$classpath:$currentDirectory/bin"
 else
 	classpath="-cp $currentDirectory/bin"
 fi;
