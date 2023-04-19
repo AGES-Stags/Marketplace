@@ -1,3 +1,4 @@
+package marketplace.entities;
 public class Product{
 	String name, description;	
 	double price;
@@ -18,4 +19,4 @@ public class Product{
 		return name;
 	}
 	
-	}
+}
