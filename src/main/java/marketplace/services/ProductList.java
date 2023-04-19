@@ -45,7 +45,18 @@ public class ProductList {
 		tail = node;
 		size++;
 	}
-
+    public void addByIndex(int index,Product product){
+		Node node = new Node(product);
+		Node aux = head;
+		
+		for(int i = 0; i < index; i++){
+			aux = aux.next;
+		}
+		aux.previous.next = node;
+		node.previous = aux.previous;
+		aux.previous = node;
+		node.next = aux;
+	}
 	public Product getIndex(int index) {
 		Node node = head;
 
@@ -58,12 +69,90 @@ public class ProductList {
 
 
 	public Product getIndexReverse(int index) {
-		Node node = head;
-			// TODO
+		Node node = tail;
+		for(int i = size; i > index; i --) {
+			node = node.previous;
+		}	
 		return node.product;
 	}
 
+	public void addFirst(Product product) { 
+		Node node = new Node(product);
+		if(head == null) {
+            head = tail = node;
+			size++;
+			return;
+		}
+		node.next = head;
+		head.previous = node;
+		head = node; 
+		size++; 
+	}
 
+	public void addLast(Product product) { 
+		Node node = new Node(product);
+		if(head == null) {
+            head = tail = node;
+			size++;
+			return;
+		}
+		node.previous = tail;
+		tail.next = node;
+		tail = node; 
+		size++; 
+	}
+	public void addFirstAndLast(Node node1, Node node2) {
+		addFirst(node1.product);
+		addLast(node2.product);
+	}
+	
+	public boolean contains(Product product) {
+		Node node = head;
+		while (node != null) {
+			if (node.product.equals(product)) {
+				return true;
+			}
+			node = node.next;
+		}
+		return false;
+	}
+	
+	public void SwapByindex(int index,int ind){
+		Node aux = head;
+		Node aux1 = head;
+		int maior=0;
+		Node guarda;
+		int menor =0;
+        
+		if(index > ind){
+			maior = index;
+			menor = ind;
+		}
+		else{
+			maior = ind;
+			menor = index;
+		}
+		for(int i = 0; i < maior; i++){
+			if(i < menor){
+			aux = aux.next;
+		    }
+			aux1 = aux1.next;
+		}
+		
+		aux1.next.previous = aux;
+		aux1.previous.next = aux;
+		aux.next.previous = aux1;
+		aux.previous.next = aux1;
+        
+		guarda = aux.next;
+		aux.next = aux1.next;
+		aux1.next = guarda;
+		guarda = aux.previous;
+		aux.previous = aux1.previous;
+		aux1.previous = guarda;
+	}
+    
+	
 	@Override
 	public String toString(){
 		return "";
