@@ -55,10 +55,10 @@ public class ProductList {
 
 
 	public Product getIndexReverse(int index) {
-		Node node = head;
-			while(node.next!=null){
-				if(getIndex(index).equals(node.product));
-			}
+		Node node = tail;
+		for(int i = size; i > index; i --) {
+			node = node.previous;
+		}	
 		return node.product;
 	}
 
@@ -102,6 +102,42 @@ public class ProductList {
 		}
 		return false;
 	}
+	
+	public void SwapByindex(int index,int ind){
+		Node aux = head;
+		Node aux1 = head;
+		int maior=0;
+		Node guarda;
+		int menor =0;
+        
+		if(index > ind){
+			maior = index;
+			menor = ind;
+		}
+		else{
+			maior = ind;
+			menor = index;
+		}
+		for(int i = 0; i < maior; i++){
+			if(i < menor){
+			aux = aux.next;
+		    }
+			aux1 = aux1.next;
+		}
+		
+		aux1.next.previous = aux;
+		aux1.previous.next = aux;
+		aux.next.previous = aux1;
+		aux.previous.next = aux1;
+        
+		guarda = aux.next;
+		aux.next = aux1.next;
+		aux1.next = guarda;
+		guarda = aux.previous;
+		aux.previous = aux1.previous;
+		aux1.previous = guarda;
+	}
+    
 	
 	@Override
 	public String toString(){
