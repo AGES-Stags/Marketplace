@@ -1,3 +1,6 @@
+package marketplace.services;
+
+import marketplace.entities.Product;
 
 public class ProductList {
 	private static ProductList list;
