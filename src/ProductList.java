@@ -42,7 +42,18 @@ public class ProductList {
 		tail = node;
 		size++;
 	}
-
+    public void addByIndex(int index,Product product){
+		Node node = new Node(product);
+		Node aux = head;
+		
+		for(int i = 0; i < index; i++){
+			aux = aux.next;
+		}
+		aux.previous.next = node;
+		node.previous = aux.previous;
+		aux.previous = node;
+		node.next = aux;
+	}
 	public Product getIndex(int index) {
 		Node node = head;
 

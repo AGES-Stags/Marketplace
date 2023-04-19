@@ -1,8 +1,8 @@
 
-public class App{
+public class AppDouble{
 
     public static void main(String[] args) {
-         l = new linkedListHeaderTrailer();
+         linkedListHeaderTrailer l = new linkedListHeaderTrailer();
         l.add(10);
         l.add(20);
         l.add(30);
@@ -29,7 +29,7 @@ public class App{
             System.out.println(i);
         }
         
-        DoubleLinkedListOfInteger l2 = new DoubleLinkedListOfInteger();
+        linkedListHeaderTrailer l2 = new linkedListHeaderTrailer();
         l2.add(2);
         l2.add(30);
         l2.add(8);
@@ -56,7 +56,7 @@ public class App{
      * @param l2 lista a ser verificada
      * @return Integer maior valor que aparece simultaneamente nas duas listas
      */
-    public static Integer getBiggestComumValue(DoubleLinkedListOfInteger l1, DoubleLinkedListOfInteger l2) {
+    public static Integer getBiggestComumValue(linkedListHeaderTrailer l1, linkedListHeaderTrailer l2) {
         Integer maior = null;
 
         // Percorre l1 (for)
