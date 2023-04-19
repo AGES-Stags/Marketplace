@@ -1,8 +1,4 @@
 #!/bin/bash
-if [ "$(uname)" = "Darwin" ]; then
-	./.mac.sh
-	exit 0
-fi;
 
 libDir="libs"
 classpath="-cp ."
@@ -29,7 +25,7 @@ fi;
 
 # Find every source file on src folder and concatenate it
 sourcePath="$(find "$currentDirectory/src" -type f -name "*.java")"
-sourcePath="${sourcePath//[$'\t\r\n']/' '}"
+sourcePath="${sourcePath//[$'\t\r\n']/ }"
 
 
 # Compile java whether or not having libraries
@@ -38,7 +34,7 @@ javac $libs $sourcePath -d $currentDirectory/bin
 
 # Find every class file on bin folder and concatenate it
 binClassPath="$(find "$currentDirectory/bin" -type d)"
-binClassPath="${binClassPath//[$'\t\r\n']/':'}"
+binClassPath="${binClassPath//[$'\t\r\n']/:}"
 classpath="$classpath:$binClassPath"
 
 # If the compilation stage does not gave any error
