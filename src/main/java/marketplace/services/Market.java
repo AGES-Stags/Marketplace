@@ -2,8 +2,13 @@ package marketplace.services;
 
 import marketplace.entities.Product;
 
-// import devtools.inject.Mockup;
+import devtools.inject.Mockup;
+
 public class Market {
+
+	static {
+		Mockup.products((Class<?>) ProductList.class, (Class<?>) Product.class);
+	}
 
 	public static void run() {
 		Product product = new Product("Geladeira",1000,"2 Portas");
@@ -22,4 +27,5 @@ public class Market {
 		productList.addFirst(product5);
 		productList.toString();
 	}
+
 }
