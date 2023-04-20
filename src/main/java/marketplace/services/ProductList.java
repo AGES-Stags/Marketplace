@@ -90,6 +90,24 @@ public class ProductList {
 			}
 		}
 	}
+	/*
+	 * Metod clear all the products of the node;
+	 */
+	public void clear(){
+		head = head.next;
+		for(Node node=head; node != null; node=node.next){
+			head.previous.product = null;
+			head.next = null;
+			head.previous = null;			
+		}
+		head = tail = null;
+		size = 0;
+	}
+
+	public Product[] clone(){
+		if(head != ){}
+
+	}
 
 	public Product getIndex(int index) {
 		Node node = head;
