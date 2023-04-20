@@ -1,6 +1,3 @@
-package marketplace.services;
-
-import marketplace.entities.Product;
 
 public class ProductList {
 	private static ProductList list;
@@ -51,14 +48,14 @@ public class ProductList {
 		Node aux = new Node(product);
 
 		guarda = head;
-		for(int i=0; i<index; i++){
-			guarda = guarda.next;
-		}
-		aux = guarda;
-		aux.previous = guarda.next;
-		aux.next = guarda.previous;	
-		size++;
-	}
+			for(int i=0; i<index; i++){
+				guarda = guarda.next;
+			}
+				aux = guarda;
+				aux.previous = guarda.next;
+				aux.next = guarda.previous;	
+				size++;
+			}
 
 	public void addFirst(Product product){//Giselle
 		Node aux = new Node(product);
@@ -68,10 +65,11 @@ public class ProductList {
 			size++;
 			return;
 		}
-		aux.next = head;
-		head.previous = aux;
-		head = aux;
-	}
+				aux.next = head;
+				head.previous = aux;
+				head = aux;
+				size++;
+			}
 
 	public void addLast(Product product){//Giselle
 		Node aux = new Node(product);
@@ -81,12 +79,11 @@ public class ProductList {
 			size++;
 			return;
 		}
-			
 		for(int i=0; i<size; i++){
 			if(i == size){
-				aux.previous = tail;
-				tail.next = aux;
-				tail = aux;
+			aux.previous = tail;
+			tail.next = aux;
+			tail = aux;
 			}
 		}
 	}
@@ -112,15 +109,9 @@ public class ProductList {
 	 * return an array containing all of the elements; 
 	 */
 	public Product[] toArray(){
-		Product[] array = new Product[size];
-		Node node = head;
+		
 
-		for (int i = 0; i < size; i++) {
-			array[i] = node.product;
-			node = node.next;
-		}
-
-		return array;
+		return 
 	}
 
 	@Override
