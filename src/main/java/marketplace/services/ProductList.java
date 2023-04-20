@@ -123,6 +123,83 @@ public class ProductList {
 		return array;
 	}
 
+
+	
+	public void SwapByindex(int index,int ind){
+		Node aux = head;
+		Node aux1 = head;
+		int maior=0;
+		Node guarda;
+		int menor =0;
+        
+		if(index > ind){
+			maior = index;
+			menor = ind;
+		}
+		else{
+			maior = ind;
+			menor = index;
+		}
+		for(int i = 0; i < maior; i++){
+			if(i < menor){
+			aux = aux.next;
+		    }
+			aux1 = aux1.next;
+		}
+		
+		aux1.next.previous = aux;
+		aux1.previous.next = aux;
+		aux.next.previous = aux1;
+		aux.previous.next = aux1;
+        
+		guarda = aux.next;
+		aux.next = aux1.next;
+		aux1.next = guarda;
+		guarda = aux.previous;
+		aux.previous = aux1.previous;
+		aux1.previous = guarda;
+	}
+    public void removeByIndex(int index){
+		if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }    
+		if(head == null) {
+           return;
+		}
+		Node aux = head;
+		for(int i=0 ; i<index ; i++){
+			aux = aux.next;
+		}
+		aux.next.previous = aux.previous;
+		aux.previous.next = aux.next;
+		size--;
+	}
+	public void removeByelement(Product product){
+		Node aux = head;
+        while(aux.next!= null){
+			aux = aux.next;
+            if(aux.product.equals(product)){
+                aux.next.previous = aux.previous;
+                aux.previous.next = aux.next;
+                size--;
+                return;
+            }
+        }
+	}
+	public void clear(){
+		Node aux=head;
+		while(aux.next!=null){
+			aux = aux.next;
+			head.next=null;
+			head=aux;
+			aux.previous=null;
+		}
+		tail=null;
+		head=null;
+		aux=null;
+	} 
+	
+
 	@Override
 	public String toString(){
 		return "";
