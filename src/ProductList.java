@@ -68,6 +68,7 @@ public class ProductList {
 				aux.next = head;
 				head.previous = aux;
 				head = aux;
+				size++;
 			}
 
 	public void addLast(Product product){//Giselle
@@ -77,7 +78,7 @@ public class ProductList {
 			head = tail = aux;
 			size++;
 			return;
-			
+		}
 		for(int i=0; i<size; i++){
 			if(i == size){
 			aux.previous = tail;
@@ -107,8 +108,9 @@ public class ProductList {
 	/*
 	 * return an array containing all of the elements; 
 	 */
-	public Object[] toArray(){
+	public Product[] toArray(){
 		
+
 		return 
 	}
 
