@@ -20,7 +20,7 @@ fi
 # Create java run classpath execution parameter
 if [ -d "$currentDirectory/$libDir/" ]; then
 	libraries="$(ls $currentDirectory/$libDir/)"
-	for library in $libraries
+	for library in "$libraries"
 	do
 		libs="$libs $currentDirectory/$libDir/$library"
 		classpath="$classpath:$currentDirectory/$libDir/$library"
@@ -33,7 +33,7 @@ sourcePath="${sourcePath//[$'\t\r\n']/' '}"
 
 
 # Compile java whether or not having libraries
-javac $libs $sourcePath -d $currentDirectory/bin
+javac "$libs" "$sourcePath" -d "$currentDirectory/bin"
 
 
 # Find every class file on bin folder and concatenate it
