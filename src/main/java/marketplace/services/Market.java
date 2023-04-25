@@ -7,7 +7,7 @@ import devtools.inject.Mockup;
 public class Market {
 
 	static {
-		Mockup.products((Class<?>) ProductList.class, (Class<?>) Product.class);
+	Mockup.products((Class<?>) ProductList.class, (Class<?>) Product.class);
 	}
 
 	public static void run() {
@@ -26,6 +26,7 @@ public class Market {
 		//productList.addProductInIndex(product5, 3);
 		productList.addFirst(product5);
 		productList.toString();
+		System.out.println(product);
 	}
 
 }
