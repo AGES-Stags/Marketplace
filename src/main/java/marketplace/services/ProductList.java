@@ -91,16 +91,24 @@ public class ProductList {
 		}
 	}
 
-	public Product getIndex(int index) {
+	public Product getByIndex(int index) {
 		Node node = head;
 
 		for(int i = 0; i < index; i ++) {
 			node = node.next;
 		}
-
 		return node.product;
 	}
 
+	public Product clone(){
+		Node clone = new Node();
+		Node aux = head;		
+		for(int i=0; i<size; i++){
+			clone.add(aux.product);
+			aux = aux.next;
+		}
+		return clone;
+	}
 
 	public Product getIndexReverse(int index) {
 		Node node = head;
